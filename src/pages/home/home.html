@@ -1,14 +1,19 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      CHA<sub>2</sub>DS<sub>2</sub>-VASc Calculator
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <h4 id="score-label">My Score:  <span id="score">{{myScore}}</span></h4>
+  <ion-list>
+      <factor
+        class="factor"
+        *ngFor="let factor of factors"
+        [factor]="factor"
+        (factorChanged)="handleFactorChanged($event)">
+      </factor>
+  </ion-list>
 </ion-content>

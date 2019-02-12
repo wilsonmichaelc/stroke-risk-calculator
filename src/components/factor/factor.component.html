@@ -1,0 +1,9 @@
+<ion-label>{{factor.name}}</ion-label>
+<ion-segment [(ngModel)]="selectedValue">
+    <ion-segment-button 
+        *ngFor="let opt of factor.options"
+        (click)="selectOption(factor.name, opt.value)"
+        [value]="opt.value">
+        <ion-label>{{opt.key}}</ion-label>
+    </ion-segment-button>
+</ion-segment>
